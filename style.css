@@ -1,0 +1,168 @@
+:root {
+    --hue: 223;
+    --bg: hsl(var(--hue),10%,90%);
+    --fg: hsl(var(--hue),10%,10%);
+    font-size: calc(16px + (24 - 16) * (100vw - 320px) / (1280 - 320));
+}
+
+body {
+    background: linear-gradient(-45deg, #5ebdb5, #e73c7e, #23a6d5, #8523d5);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+    height: 150vh;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+header {
+    spacing: 10px;
+    position: -webkit-sticky;
+    overflow: hidden;
+    background-color: rgba(65, 65, 65, 0.69);
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.18);
+    padding: 20px 10px;
+}
+
+/* Style the header links */
+header a {
+    font-family: sans-serif;
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 25px;
+    border-radius: 4px;
+}
+
+header a:hover {
+    background-color: rgba(0, 0, 0, 0.11);
+}
+
+header a.active {
+    background-color: rgba(63, 63, 63, 0.69);
+    border: 1px solid rgba(255, 255, 255, 0.18)
+}
+
+header #right {
+    float: left;
+    text-align: center;
+}
+
+#Logo {
+    transition: 1s ease-out;
+    transform: translateY(100px);
+    background-color: #2a2a2a;
+    border-radius: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.22);
+    padding-bottom: 30px;
+    padding-right: 50px;
+    width: 750px;
+    display: block;
+    margin: auto;
+}
+
+#Logo #info .text {
+    font-family: "Arial Black";
+    color: white;
+    font-size: 100px;
+    transform: translateY(20px);
+    display: flex;
+    justify-content: center;
+    background: #158BCF;
+    background: linear-gradient(to right, #158BCF 2%, #8E1DCF 72%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#Logo #info .profil {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-family: "Arial Black";
+    font-size: 50px;
+    transform: translateY(30px);
+    display: flex;
+}
+
+#Logo #info .textbig {
+    display: flex;
+    text-align: left;
+    font-family: "Arial";
+    justify-content: center;
+    font-size: 30px;
+    justify-content: center;
+    transform: translateY(-100px);
+    transform: translateX(100px);
+    color: white;
+    padding-top: 0px;
+    text-spacing: 10px;
+}
+
+#Logo #info .profil .img {
+    border: 2px solid rgba(255, 255, 255, 0.16);
+    border-radius: 100%;
+    height: 200px;
+}
+
+#Logo #info .links {
+    parent: #Logo;
+    transform: translateX(20px);
+    display: flex;
+    justify-content: space-around;
+}
+
+#Logo #info .links .item {
+    text-decoration: none;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    color: white;
+    float: left;
+    transform: translateY(60px) scale(2.8);
+    display: flex;
+    margin: auto;
+    height: 35px;
+    width: 90px;
+    transition: 0.5s ease-out;
+}
+
+#Logo #info .links .item .bi { transition: 0.5s ease-out; }
+
+#Logo #info .links .item:hover .bi {
+   color: rgba(255, 255, 255, 0.56);
+    transform: translateY(1px);
+}
+
+#Logo #info .links .item h2 {
+    font-size: 8px;
+    font-family: Arial;
+    transform: translateY(-5px) translateX(5px);
+}
+
+#Logo #info {
+    margin-bottom: 40px;
+}
+
+@media screen and (max-width: 500px) {
+    header a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    header #right {
+        float: none;
+    }
+}
