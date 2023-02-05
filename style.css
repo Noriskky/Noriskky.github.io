@@ -25,6 +25,10 @@ body {
 }
 
 header {
+
+    top: 0;
+    position: sticky;
+    position: -webkit-sticky;
     spacing: 10px;
     position: -webkit-sticky;
     overflow: hidden;
@@ -62,6 +66,7 @@ header #right {
 }
 
 #Logo {
+    position: sticky;
     transition: 1s ease-out;
     transform: translateY(100px);
     background-color: #2a2a2a;
@@ -72,6 +77,8 @@ header #right {
     width: 750px;
     display: block;
     margin: auto;
+    -webkit-box-shadow: 24px 28px 50px 1px rgba(0,0,0,0.46);
+    box-shadow: 24px 28px 50px 1px rgba(0,0,0,0.46);
 }
 
 #Logo #info .text {
