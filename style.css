@@ -3,12 +3,17 @@
     --bg: hsl(var(--hue),10%,90%);
     --fg: hsl(var(--hue),10%,10%);
     font-size: calc(16px + (24 - 16) * (100vw - 320px) / (1280 - 320));
+    --bg-color: rgb(20, 20, 20);
+}
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-    background: linear-gradient(-45deg, #5ebdb5, #e73c7e, #23a6d5, #8523d5);
-    background-size: 400% 400%;
-    animation: gradient 15s ease infinite;
+    overflow-x: hidden;
+    backdrop-filter: blur(14vmax);
+    background: var(--bg-color);
     height: 150vh;
 }
 
@@ -25,17 +30,22 @@ body {
 }
 
 header {
-
+    left: 0;
+    transform: translateX(-8px) translateY(-8px);
+    width: 100%;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    box-shadow:
+            0px 12.6px 29.9px -2px rgba(0, 0, 0, 0.177),
+            0px 42.2px 100.3px -2px rgba(0, 0, 0, 0.188),
+            0px 189px 449px -2px rgba(0, 0, 0, 0.18);
+    z-index: 1;
     top: 0;
     position: sticky;
     position: -webkit-sticky;
-    spacing: 10px;
-    position: -webkit-sticky;
     overflow: hidden;
-    background-color: rgba(65, 65, 65, 0.69);
-    border-radius: 10px;
-    border: 2px solid rgba(255, 255, 255, 0.18);
-    padding: 20px 10px;
+    padding: 10px 20px;
 }
 
 /* Style the header links */
@@ -49,6 +59,8 @@ header a {
     font-size: 18px;
     line-height: 25px;
     border-radius: 4px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 header a:hover {
@@ -56,7 +68,7 @@ header a:hover {
 }
 
 header a.active {
-    background-color: rgba(63, 63, 63, 0.69);
+    background-color: rgba(63, 63, 63, 0.12);
     border: 1px solid rgba(255, 255, 255, 0.18)
 }
 
@@ -65,111 +77,109 @@ header #right {
     text-align: center;
 }
 
-#Logo {
-    position: sticky;
-    transition: 1s ease-out;
-    transform: translateY(100px);
-    background-color: #2a2a2a;
-    border-radius: 10px;
-    border: 2px solid rgba(255, 255, 255, 0.22);
-    padding-bottom: 30px;
-    padding-right: 50px;
-    width: 750px;
-    display: block;
+#Welcome img {
+    height: 300px;
+    border-radius: 100%;
+    transform: translateY(20px);
     margin: auto;
-    -webkit-box-shadow: 24px 28px 50px 1px rgba(0,0,0,0.46);
-    box-shadow: 24px 28px 50px 1px rgba(0,0,0,0.46);
+    display: block;
+    transition: box-shadow 1s ease-out;
 }
 
-#Logo #info .text {
+#Welcome h1 {
     font-family: "Arial Black";
-    color: white;
+    text-align: center;
+    transform: translateY(-90px);
     font-size: 100px;
-    transform: translateY(20px);
-    display: flex;
-    justify-content: center;
-    background: #158BCF;
-    background: linear-gradient(to right, #158BCF 2%, #8E1DCF 72%);
+    background: linear-gradient(66deg, rgba(255,158,158,1) 0%, rgba(255,3,75,1) 100%, rgba(253,45,45,1) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    transition: text-shadow 2s ease-out;
 }
 
-#Logo #info .profil {
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    font-family: "Arial Black";
-    font-size: 50px;
-    transform: translateY(30px);
-    display: flex;
+#Welcome:hover h1 {
+    transition: text-shadow 1s ease-out;
+    text-shadow: rgba(255,0,34,1) 0px 0px 29px;
 }
 
-#Logo #info .textbig {
-    display: flex;
-    text-align: left;
-    font-family: "Arial";
-    justify-content: center;
-    font-size: 30px;
-    justify-content: center;
-    transform: translateY(-100px);
-    transform: translateX(100px);
-    color: white;
-    padding-top: 0px;
-    text-spacing: 10px;
+#Welcome:hover img {
+    box-shadow: 0px 0px 124px 67px rgba(255,46,46,0.38);
+    transition: box-shadow 1s ease-out;
 }
 
-#Logo #info .profil .img {
-    border: 2px solid rgba(255, 255, 255, 0.16);
-    border-radius: 100%;
-    height: 200px;
-}
-
-#Logo #info .links {
-    parent: #Logo;
-    transform: translateX(20px);
-    display: flex;
-    justify-content: space-around;
-}
-
-#Logo #info .links .item {
-    text-decoration: none;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    color: white;
-    float: left;
-    transform: translateY(60px) scale(2.8);
-    display: flex;
-    margin: auto;
-    height: 35px;
-    width: 90px;
-    transition: 0.5s ease-out;
-}
-
-#Logo #info .links .item .bi { transition: 0.5s ease-out; }
-
-#Logo #info .links .item:hover .bi {
-   color: rgba(255, 255, 255, 0.56);
-    transform: translateY(1px);
-}
-
-#Logo #info .links .item h2 {
-    font-size: 8px;
+#Welcome h3 {
     font-family: Arial;
-    transform: translateY(-5px) translateX(5px);
+    color: white;
+    text-align: center;
+    transform: translateY(-180px);
 }
 
-#Logo #info {
-    margin-bottom: 40px;
+#GoldGruben h3 {
+    color: #fff;
+    font-family: Arial;
+    text-align: center;
+    width: 800px;
+    margin: auto;
 }
 
-@media screen and (max-width: 500px) {
+#GoldGruben .dc svg {
+    display: inline;
+    color: white;
+    height: 50px;
+    width: 50px;
+    transform: translateY(50px) translateX(250px);
+}
+
+#GoldGruben .dc h3 {
+    color: #5e96ff;
+    text-decoration: underline;
+}
+
+#GoldGruben .dc {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+
+@media screen and (max-width: 600px) {
     header a {
         float: none;
         display: block;
+        align-items: center;
         text-align: left;
     }
     header #right {
         float: none;
     }
+}
+
+@keyframes rotate {
+    from {
+        rotate: 0deg;
+    }
+
+    50% {
+        scale: 1 1.1;
+    }
+
+    to {
+        rotate: 360deg;
+    }
+}
+
+#blob {
+    z-index: -2;
+    filter: blur(100px);
+    background-color: white;
+    height: 20vmax;
+    aspect-ratio: 1;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    border-radius: 50%;
+    background: linear-gradient(to right, rgba(127, 255, 212, 0.44), rgba(147, 112, 219, 0.3));
+    animation: rotate 20s infinite;
+    opacity: 0.8;
 }
