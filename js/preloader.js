@@ -4,7 +4,7 @@ init()
 
 async function init() {
     document.getElementById("header").style.display = 'none';
-    document.body.style.display = 'none';
+    document.getElementById("container").style.display = 'none';
     document.body.style.overflowY = 'hidden';
     await delay(1000)
     await delay(1000)
@@ -14,6 +14,7 @@ async function init() {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
     document.getElementById("header").style.display = '';
     document.body.style.overflowY = '';
+    document.getElementById("container").style.display = '';
     document.getElementById("wrapper").style.display = 'none';
 }
 

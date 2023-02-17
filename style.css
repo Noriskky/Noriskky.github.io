@@ -6,6 +6,9 @@
     --bg-color: rgb(20, 20, 20);
 }
 
+* {
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -30,11 +33,14 @@ body {
 }
 
 header {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
     left: 0;
     transform: translateX(-8px) translateY(-8px);
     width: 100%;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(80px);
+    -webkit-backdrop-filter: blur(80px);
     border: 1px solid rgba(255, 255, 255, 0.07);
     box-shadow:
             0px 12.6px 29.9px -2px rgba(0, 0, 0, 0.177),
@@ -75,6 +81,12 @@ header a.active {
 header #right {
     float: left;
     text-align: center;
+}
+
+#Welcome {
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
 }
 
 #Welcome img {
@@ -120,14 +132,6 @@ header #right {
     text-align: center;
     width: 800px;
     margin: auto;
-}
-
-#GoldGruben .dc svg {
-    display: inline;
-    color: white;
-    height: 50px;
-    width: 50px;
-    transform: translateY(50px) translateX(250px);
 }
 
 #GoldGruben .dc h3 {
